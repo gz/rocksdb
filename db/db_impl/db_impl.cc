@@ -2698,8 +2698,8 @@ Status DBImpl::CreateColumnFamily(const ColumnFamilyOptions& cf_options,
   assert(handle != nullptr);
   Status s = CreateColumnFamilyImpl(cf_options, column_family, handle);
   if (s.ok()) {
-    s = WriteOptionsFile(true /*need_mutex_lock*/,
-                         true /*need_enter_write_thread*/);
+    //s = WriteOptionsFile(true /*need_mutex_lock*/,
+    //                     true /*need_enter_write_thread*/);
   }
   return s;
 }
@@ -2852,8 +2852,8 @@ Status DBImpl::DropColumnFamily(ColumnFamilyHandle* column_family) {
   assert(column_family != nullptr);
   Status s = DropColumnFamilyImpl(column_family);
   if (s.ok()) {
-    s = WriteOptionsFile(true /*need_mutex_lock*/,
-                         true /*need_enter_write_thread*/);
+    //s = WriteOptionsFile(true /*need_mutex_lock*/,
+    //                     true /*need_enter_write_thread*/);
   }
   return s;
 }
